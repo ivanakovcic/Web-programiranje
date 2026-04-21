@@ -1,2 +1,2 @@
 INSERT INTO category (name, description) VALUES ('Akcija', 'Igre pune adrenalina');
-INSERT INTO game (title, description, url, category_id) VALUES ('Super Igra', 'Opis...', 'https://example.com/game', 1); gde ovo da psiem
+INSERT INTO game (title, description, url, category_id) VALUES ('Super Igra', 'Opis...', 'https://example.com/game', 1);
