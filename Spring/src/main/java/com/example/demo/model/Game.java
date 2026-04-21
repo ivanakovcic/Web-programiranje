@@ -1,3 +1,10 @@
+package com.example.demo.model;
+
+import jakarta.persistence.*;
+import java.io.Serializable; // OVA LINIJA NEDOSTAJE
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 public class Game implements Serializable {
     @Id
