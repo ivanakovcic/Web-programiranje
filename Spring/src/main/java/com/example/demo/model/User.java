@@ -70,4 +70,11 @@ public class User implements Serializable {
 
     public Set<Statistics> getStats() { return stats; }
     public void setStats(Set<Statistics> stats) { this.stats = stats; }
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Achievement> achievements = new HashSet<>();
+
+    public Set<Achievement> getAchievements() { return achievements; }
+
+    public void setAchievements(Set<Achievement> achievements) { this.achievements = achievements; }
 }
