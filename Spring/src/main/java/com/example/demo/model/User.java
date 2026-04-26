@@ -77,4 +77,10 @@ public class User implements Serializable {
     public Set<Achievement> getAchievements() { return achievements; }
 
     public void setAchievements(Set<Achievement> achievements) { this.achievements = achievements; }
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Review> reviews = new HashSet<>();
+
+    public Set<Review> getReviews() { return reviews; }
+    public void setReviews(Set<Review> reviews) { this.reviews = reviews; }
 }

@@ -16,6 +16,8 @@ public class Game implements Serializable {
     private String description;
     private String url;
     private String thumbnailUrl;
+    private java.time.LocalDateTime dateAdded;
+    private boolean active;
 
     @ManyToOne
     private Category category;
@@ -41,6 +43,12 @@ public class Game implements Serializable {
     public Category getCategory() { return category; }
     public void setCategory(Category category) { this.category = category; }
 
+    public java.time.LocalDateTime getDateAdded() { return dateAdded; }
+    public void setDateAdded(java.time.LocalDateTime dateAdded) { this.dateAdded = dateAdded; }
+
+    public boolean isActive() { return active; }
+    public void setActive(boolean active) { this.active = active; }
+
     public Set<Statistics> getStats() { return stats; }
     public void setStats(Set<Statistics> stats) { this.stats = stats; }
 
@@ -50,4 +58,10 @@ public class Game implements Serializable {
     public Set<Achievement> getAchievements() { return achievements; }
 
     public void setAchievements(Set<Achievement> achievements) { this.achievements = achievements; }
+
+    @OneToMany(mappedBy = "game", cascade = CascadeType.ALL)
+    private Set<Review> reviews = new HashSet<>();
+
+    public Set<Review> getReviews() { return reviews; }
+    public void setReviews(Set<Review> reviews) { this.reviews = reviews; }
 }
